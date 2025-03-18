@@ -1,51 +1,51 @@
-# Magisk Changelog
+#Magisk Changelog
 
-### v28.1
+###v28.1
 
-- [App] Fix stub APK download link
-- [App] Fix support for Android lower than 8.0
-- [General] Fix support for MTK Samsung devices
-- [MagiskInit] Fix a regression for 2SI devices
-- [MagiskPolicy] Fix a regression causing `overlay.d` replaced files to be not accessible
+- [应用程序]修复存根安装包下载链接
+- [应用程序]修复对低于8.0的Android的支持
+- [一般的]修复对MTK三星设备的支持
+- [MagiskInit]修复2Si器件的回归
+- [MagiskPolicy]修复回归导致`overlay.d`无法存取的已取代档案
 
-### v28.0
+###v28.0
 
-- [General] Support 16k page size
-- [General] Add basic support for RISC-V (not built in releases)
-- [General] Use a minimal libc to build static executables (`magiskinit` and `magiskboot`) for smaller sizes
-- [Core] Remove unnecessary mirror for magic mount
-- [Core] Update boot image detection logic to support more devices
-- [MagiskInit] Rewrite 2SI logic for injecting `magiskinit` as `init`
-- [MagiskInit] Update preinit partition detection
-- [Zygisk] Update internal JNI hooking implementation
-- [MagiskPolicy] Preserve sepolicy config flag after patching
-- [MagiskPolicy] Optimize patching rules to reduce the amount of new rules being injected
-- [DenyList] Support enforcing denylist when Zygisk is disabled
-- [Resetprop] Improve implementation to workaround several property modification detections
-- [Resetprop] Update to properly work with property overlays
-- [App] Major internal code refactoring
-- [App] Support patching Samsung firmware with images larger than 8GiB
-- [App] Use user-initiated job instead of foreground services on Android 14
-- [App] Support Android 13+ built-in per-app language preferences
-- [App] Add `action.sh` support to allow modules to define an action triggered from UI
-- [MagiskBoot] Support spliting kernel images without decompression
-- [MagiskBoot] Properly support vendor boot images
-- [MagiskBoot] Disable Samsung PROCA from kernel image
+- [一般的]支持16k页面大小
+- [一般的]添加对RISC-V(非内置版本)的基本支持
+- [一般的]使用最小的libc来构建静态可执行文件(`magiskinit`和`magiskboot`)对于较小尺寸
+- [核心]为魔术安装拆下不必要的镜子
+- [核心]更新启动映像检测逻辑以支持更多设备
+- [MagiskInit]重写2Si注入逻辑`magiskinit`作为`init`
+- [MagiskInit]更新preinit分区检测
+- [Zygisk]更新内部JNI挂钩实现
+- [MagiskPolicy]修补后保留sepolicy配置标志
+- [MagiskPolicy]优化修补规则以减少注入的新规则数量
+- [DenyList]Zygisk停用时支援强制执行Denylist
+- [Resetprop]解决多个属性修改检测的改进实现
+- [Resetprop]更新以正确使用特性覆盖
+- [应用程序]主要内部代码重构
+- [应用程序]支持为大于8GiB的图像修补三星固件
+- [应用程序]在Android14上使用用户启动的作业而不是前台服务
+- [应用程序]支持Android13+内置每个应用程序的语言首选项
+- [应用程序]添加`action.sh`支持允许模块定义从UI触发的操作
+- [MagiskBoot]支持拆分内核映像，无需解压缩
+- [MagiskBoot]正确支持供应商启动映像
+- [MagiskBoot]从内核映像禁用Samsung Proca
 
-### v27.0
+###v27.0
 
-- [Zygisk] Introduce new code injection mechanism
-- [Zygisk] Support new signature introduced in U QPR2
-- [SEPolicy] Update libsepol to properly set some policy config bits
-- [MagiskBoot] Support compressing `init` so Magisk is installable on devices with small boot partitions
-- [ResetProp] Add new wait for property feature `resetprop -w`
+- [Zygisk]引入新的代码注入机制
+- [Zygisk]支持U QPR2中引入的新签名
+- [Sepolicy]更新libsepol以正确设置某些策略配置位
+- [MagiskBoot]支架压缩`init`所以Magisk可以安装在引导分区较小的设备上。
+- [ResetProp]添加新的等待属性功能`resetprop-w`
 
-### v26.4
+###v26.4
 
-- [MagiskBoot] Don't pad zeros if signed boot image is larger
-- [MagiskPolicy] Fix `genfscon` and `filename_trans`
-- [MagiskPolicy] Fix bug in `libsepol`
-- [Zygisk] Fix and simplify file descriptor sanitization logic
+- [MagiskBoot]如果签名引导映像较大，则不填充0
+- [MagiskPolicy]固定`genfscon`和`filename_trans`
+- [MagiskPolicy]修复中的错误`libsepol`
+- [Zygisk]修复并简化文件描述符清理逻辑
 - [App] Prevent OOM when patching AP tarfiles
 - [App] Fix bug in device configuration detection
 - [Daemon] Fix certificate parsing of APKs
@@ -60,76 +60,76 @@
 
 ### v26.2
 
-- [MagiskBoot] Support extracting boot image from `payload.bin`
-- [MagiskBoot] Support cpio files containing character files
-- [MagiskBoot] Support listing cpio content
-- [MagiskBoot] Directly handle AVB 1.0 signing and verification without going through Java implementation
-- [Daemon] Make daemon socket a fixed path in MAGISKTMP
-- [resetprop] Support printing property context
-- [resetprop] Support only printing persistent properties from storage
-- [resetprop] Properly support setting persistent properties bypassing property_service
-- [MagiskSU] Support `-g` and `-G` options
-- [MagiskSU] Support switching mount namespace to PID with `-t`
-- [MagiskPolicy] Fix patching extended permissions
-- [MagiskPolicy] Support more syntax for extended permissions
-- [MagiskPolicy] Support printing out the loaded sepolicy rules
-- [App] Support patching boot image from ROM zips
-- [App] Properly preserve `boot.img` when patching Samsung firmware with `init_boot.img`
+- [MagiskBoot]支持从提取启动映像`payload.bin`
+- [MagiskBoot]支持包含字符文件的cpio文件
+- [MagiskBoot]支持列出cpio内容
+- [MagiskBoot]直接处理AVB1.0签名和验证，无需经过Java实现
+- [守护程序]在MAGISKTMP中将守护程序套接字设置为固定路径
+- [resetprop]支持打印属性上下文
+- [resetprop]仅支持从存储打印永久属性
+- [resetprop]正确支持设置永久属性绕过property_service
+- [MagiskSU]支持`-g`和`-g`选项
+- [MagiskSU]支持将装载命名空间切换到PID`-t`
+- [MagiskPolicy]修复修补扩展权限
+- [MagiskPolicy]支持更多扩展权限语法
+- [MagiskPolicy]支持打印出加载的sepolicy规则
+- [应用程序]支持从ROM压缩包修补启动映像
+- [应用程序]妥善保存`boot.img`为三星固件打补丁时`init_boot.img`
 
-### v26.1
+###v26.1
 
-- [App] Fix crashing when revoking root permissions
-- [MagiskInit] Always prefer `ext4` partitions over `f2fs` when selecting the pre-init partition
-- [General] Restore module files' context/owner/group from mirror. This is a regression introduced in v26.0
+- [应用程序]修复撤消root权限时崩溃的问题
+- [MagiskInit]总是偏爱`ext4`分区覆盖`F2FS`选择初始化前分区时
+- [一般的]从镜像还原模块文件的上下文/所有者/组。这是v26.0中引入的回归
 
-### v26.0
+###v26.0
 
-- [General] Bump minimum supported Android version to Android 6.0
-- [General] New magic mount backend. It supports loading modules into system with `overlayfs` files injected
-- [Zygisk] Release new API version 4
-- [Zygisk] Prevent crashing daemon in error
-- [Zygisk] Rewrite zygote code injection with new loader library approach
-- [Zygisk] Rewrite code unloading implementation
-- [MagiskBoot] Support amonet microloader devices
-- [MagiskBoot] Always use lz4_legacy compression on v4 boot images. This fixes boot image patching issues on Android U preview.
-- [MagiskInit] Support replacing existing \*.rc files in `overlay.d`
-- [MagiskInit] Rewrite sepolicy.rules mounting and loading implementation
-- [App] Make stub patching 100% offline
-- [App] Support patching `init_boot.img` for Samsung ODIN firmware
-- [MagiskPolicy] Fix minor bug in command line argument parsing
-- [MagiskPolicy] Update rules to support Android U
+- [一般的]将最低支持的Android版本提升到Android6.0
+- [一般的]新的magic mount后端，支持将模块加载到系统`overlayfs`插入的文件
+- [Zygisk]发布新API版本4
+- [Zygisk]防止出现错误时使守护程序崩溃
+- [Zygisk]用新的加载程序库方法重写合子代码注入
+- [Zygisk]重写代码卸载实现
+- [MagiskBoot]支持amonet微型装载机装置
+- [MagiskBoot]始终使用lz4_legacy压缩的v4启动映像。这解决了启动映像补丁问题在Android U预览。
+- [MagiskInit]支持替换中的现有\*.rc文件`overlay.d`
+- [MagiskInit]重写sepolicy.规则装载和加载实现
+- [应用程序]使存根修补程序100%脱机
+- [应用程序]支架修补`init_boot.img`用于Samsung ODIN固件
+- [MagiskPolicy]修复命令行参数解析中的小错误
+- [MagiskPolicy]更新规则以支持Android U
 
-### v25.2
+###v25.2
 
-- [MagiskInit] Fix a potential issue when stub cpio is used
-- [MagiskInit] Fix reboot to recovery when stub cpio is used
-- [MagiskInit] Fix sepolicy.rules symlink for rootfs devices
-- [General] Better data encryption detection
-- [General] Move the whole logging infrastructure into Rust
+- [MagiskInit]修复使用存根cpio时的潜在问题
+- [MagiskInit]修复使用存根cpio时的重新启动恢复
+- [MagiskInit]修复rootfs设备的sepolicy.规则符号链接
+- [一般的]更好的数据加密检测
+- [一般的]将整个日志基础架构迁移到Rust
 
-### v25.1
+###v25.1
 
-- [MagiskBoot] Fix ramdisk backup being incorrectly skipped
-- [MagiskBoot] Add new feature to detect unsupported dtb and abort during installation
-- [Zygisk] Change binary hijack paths
-- [App] Fix incorrect recovery mode detection and installation
-- [MagiskInit] Fix config not properly exported in legacy SAR devices
-- [General] Enforce the Magisk app to always match or be newer than `magiskd`
+- [MagiskBoot]修复错误跳过的ramdisk备份
+- [MagiskBoot]添加新功能以检测不支持的DTB并在安装期间中止
+- [Zygisk]更改二进制劫持路径
+- [应用程序]修复不正确的恢复模式检测和安装
+- [MagiskInit]修复未在传统SAR设备中正确导出的配置
+- [一般的]强制Magisk应用程序始终匹配或更新`磁iskd`
 
-### v25.0
+###v25.0
 
-- [MagiskInit] Update 2SI implementation, significantly increase device compatibility (e.g. Sony Xperia devices)
-- [MagiskInit] Introduce new `sepolicy` injection mechanism
-- [MagiskInit] Support Oculus Go
-- [MagiskInit] Support Android 13 GKIs (Pixel 6)
-- [MagiskBoot] Fix vbmeta extraction implementation
-- [App] Fix stub app on older Android versions
-- [App] [MagiskSU] Properly support apps using `sharedUserId`
-- [MagiskSU] Fix a possible crash in `magiskd`
-- [MagiskSU] Prune unused UIDs as soon as `system_server` restarts to prevent UID reuse attacks
-- [MagiskSU] Verify and enforce the installed Magisk app's certificate to match the distributor's signature
-- [MagiskSU] [Zygisk] Proper package management and detection
-- [Zygisk] Fix function hooking on devices running Android 12 with old kernels
+- [MagiskInit]更新2Si实现，显著提高设备兼容性(例如Sony Xperia设备)
+- [MagiskInit]介绍新的`Sepolicy`注入机构
+- [MagiskInit]支持Oculus Go
+- [MagiskInit]支持Android13GKI(像素6)
+- [MagiskBoot]修复vbmeta提取实现
+- [应用程序]修复旧Android版本上的存根应用程序
+- [应用程序] [MagiskSU]正确支持应用程序使用`sharedUserId`
+- [MagiskSU]修复中可能的崩溃`磁iskd`
+- [MagiskSU]尽快修剪未使用的UID`system_server`重新启动以防止UID重复使用攻击
+- [MagiskSU]验证并强制执行已安装Magisk应用程序的证书以匹配分发服务器的签名
+- [MagiskSU] [Zygisk]正确的包装管理和检测
+- [Zygisk]修复使用旧内核运行Android12的设备上的功能挂接
 - [Zygisk] Fix Zygisk's self code unloading implementation
 - [DenyList] Fix DenyList on shared UID apps
 - [BusyBox] Add workaround for devices running old kernels
